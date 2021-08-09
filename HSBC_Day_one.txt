@@ -1,0 +1,36 @@
+Loan Account 
+
+type
+accountaname
+dateReleased
+LoanAmount
+
+There are two types of Loans namely Housing Loan and Personal Loan
+
+
+
+Design a Class Diagram for Training Registration System
+
+1. Student , Courses ,Teacher and Assisgnments (Given to the students)
+
+One or more Student Registers in courses 
+One Course is taught by One teacher
+One Student has many activities
+
+
+
+1) Using Java in Command Line
+
+Create a Folder src and save Java Classes to Convert Dollors Into Rupees 
+
+Compile the classess into a folder output 
+
+Execute the Code and check the Output
+
+2) Creating a Java Class
+
+Create a Java Class to store the details of a Blood Donor
+and test the class by passing the arguments to the Parameterized constructor and Using setter & getter Methods
+
+
+ 
