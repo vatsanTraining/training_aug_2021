@@ -1,7 +1,5 @@
 Loan Account 
-
-type
-accountaname
+accountHolderaname
 dateReleased
 LoanAmount
 
