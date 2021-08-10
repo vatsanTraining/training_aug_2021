@@ -3,10 +3,15 @@ package com.training;
 public class LearnVariables {
 
 	private int id;
-	private static String department;
+	private static String department ="Computer Science";
+	private static int counter =1;
 	private String firstName;
 	
 	//Instance and Static variable have default value
+	
+	public String getDepartment() {
+		return department;
+	}
 	
 	public void defaultValue() {
 		
@@ -47,4 +52,13 @@ public class LearnVariables {
 		return item;
 	}
 	
+	public void increment() {
+		
+		counter++;
+	}
+	
+	public int getCounter() {
+		
+		return counter;
+	}
 }
