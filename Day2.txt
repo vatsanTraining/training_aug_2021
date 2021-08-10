@@ -1,0 +1,4 @@
+create a Java Class Payment with following  int paymentId, Customer customer,double amount ,boolean status
+Customer type is a java class with following int customerId,String customerName,long phoneNumber
+In both the classes add constructors and few overloaded constructors 
+In Both the classes add a method toString with a return type string , which returns the all the properties delimited by a comma ",".
