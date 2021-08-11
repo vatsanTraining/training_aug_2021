@@ -33,12 +33,10 @@ public class VechcileInsurance extends Insurance {
 		this.yearOfMfg = yearOfMfg;
 	}
 
-	@Override
 	public String toString() {
 		return super.dummy+"VechcileInsurance [modelName=" + modelName + ", yearOfMfg=" + yearOfMfg + "]";
 	}
 
-	@Override
 	public double calculatePremium() {
 
 		double premium = 0.0;

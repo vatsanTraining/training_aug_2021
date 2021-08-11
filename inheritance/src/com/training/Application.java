@@ -24,6 +24,5 @@ public class Application {
 		
 		System.out.println(vecObj.calculatePremium());
 		 
-		
 	}
 }

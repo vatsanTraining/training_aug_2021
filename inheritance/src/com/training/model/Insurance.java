@@ -36,7 +36,6 @@ public class Insurance {
 	public void setPolicyAmount(double policyAmount) {
 		this.policyAmount = policyAmount;
 	}
-	@Override
 	public String toString() {
 		return "Insurance [policyNumber=" + policyNumber + ", policyHolderName=" + policyHolderName + ", policyAmount="
 				+ policyAmount + "]";

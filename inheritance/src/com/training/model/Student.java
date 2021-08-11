@@ -40,7 +40,6 @@ public class Student {
 		this.markScored = markScored;
 	}
 
-	@Override
 	public String toString() {
 		return this.studentName +"," +this.rollNumber+"," +this.markScored;
 	}
