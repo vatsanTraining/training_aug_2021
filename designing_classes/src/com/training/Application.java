@@ -7,6 +7,12 @@ public class Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		String number ="45";
+	int parsedNumber = Integer.parseInt(number);
+		
+	parsedNumber++;
+	
+	 
 		Item tv = new Item();
 		
 		  tv.setItemNumber(1010);
