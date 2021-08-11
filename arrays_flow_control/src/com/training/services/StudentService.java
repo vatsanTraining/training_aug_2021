@@ -12,6 +12,14 @@ public class StudentService {
 	}
 	
 	
+	
+	public StudentService() {
+		super();
+ // initlaize the list2
+	}
+
+
+
 	public void printNames() {
 		
 		for(Student eachStudent: list) {
