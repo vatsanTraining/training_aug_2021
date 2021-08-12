@@ -17,7 +17,7 @@
 ===================================================
 1) Create a new class YentoInr and implement the function interface
 2) Extend the currencyconverterService 
-3) Add one more constant to convTypes
+3) Extend the ConvType Interface and Add one more constant .
 4) Override the getFunctionByType=>
 5) Test with psvm
 =====================
