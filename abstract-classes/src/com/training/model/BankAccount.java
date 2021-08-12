@@ -31,4 +31,10 @@ public abstract class BankAccount {
 	public abstract double deposit(double amount) ;
 	public abstract double withdraw(double amount);
 
+	public String getMessage() {
+		
+		return "Hello from abstract class";
+	}
+	
+	
 }

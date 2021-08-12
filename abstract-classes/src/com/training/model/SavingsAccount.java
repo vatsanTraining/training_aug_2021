@@ -41,7 +41,13 @@ public  class SavingsAccount extends BankAccount {
 		return getBalance();
 	}
 
-	
+	// This method is not in super class 
+	// its just in sub class 
+	public String getDetails() {
+		
+		return "Preferred Customer ";
+		
+	}
 	
 	
 	
