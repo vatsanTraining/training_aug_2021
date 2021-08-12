@@ -1,15 +1,34 @@
 package com.training;
 
+import com.training.ifaces.ConvTypes;
 import com.training.ifaces.Function;
+import com.training.services.CurrencyConverterService;
 
 public class Application {
 
 	public static void main(String[] args) {
 
+		CurrencyConverterService service =
+				   new CurrencyConverterService();
 		
-		Function funObj = new UsdToInrConverter();
+		Function usdToInr = service.getFunctionByType(1);
 		
-		   System.out.println("Expected: 7000 ,Actual:="+ funObj.apply(100));
+		Function dhmToInr= service.getFunctionByType(ConvTypes.DHMTOINR);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		   
 	}
 
