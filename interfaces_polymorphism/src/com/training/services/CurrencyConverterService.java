@@ -43,6 +43,6 @@ public Function getFunctionByType(String key) {
 		System.out.println(funRef.apply(value));
 	}
 	
-	
+	//YenToInR
 	
 }
