@@ -20,11 +20,14 @@ public class Application {
 		
 		
 		  Function[] refs = {usdToInr,dhmToInr,euroToInr};
+		  int[] values = {100,200,300};
 		  
-		  System.out.println("Expected : 7000 -2000 -9000");
+		  System.out.println("Expected : 7000 -4000 -27000");
+		  int i=0;
 		  for(Function eachRef: refs) {
 			  
-			  service.printResult(eachRef, 100);
+			  service.printResult(eachRef, values[i]);
+			i++;
 		  }
 		
 		
