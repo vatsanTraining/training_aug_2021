@@ -10,7 +10,7 @@ the interest amount based on simple Interest
 
 It has attributes like loanAmount details of property etc.,
 
-Create a Class LoanService with a method printLoanDetails(Loan loan) pass the 
+Create a Class LoanService with a method printLoanDetails(Loan[] loan) pass the 
 different loan and print the respective details.
 
 
