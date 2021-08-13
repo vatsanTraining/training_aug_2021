@@ -17,5 +17,29 @@ com.training.exections.RangeCheckException
    
      Application
         scanner=> try-with resource
+ ===================================================
+ 
+ 1) Make a StandAlone Class if its not passing "is a" relationship
+    with any other class in your project other than Object class
+    
+2) Make a Subclass if it passes "is a" relationship with any existing
+   class and you want to add more attributes or methods or override any
+   existing methods
+   
+3) Create a abstract class to provide a template for a group of classes
+   same attributes or same methods
+   
+4) Create a Interface to provide additional behaviours (methods) for 
+   a group of classes in different hierarchy.    
+   
+       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
         
         
