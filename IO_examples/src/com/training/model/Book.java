@@ -1,11 +1,15 @@
 package com.training.model;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
 
 	private int bookNumber;
 	private String bookName;
 	private String author;
 	private double price;
+	
+	private final String counter ="1";
 	
 	
 	public Book() {

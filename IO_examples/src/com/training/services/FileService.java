@@ -9,14 +9,14 @@ public class FileService {
 	
 	public boolean writeToFile(List<Book> bookList) throws IOException {
 		
-		boolean result = false;
+		boolean result =false;
 		
 		try(PrintWriter writer = new PrintWriter(
 				            new FileWriter(new File("books.txt"),true))){
 			
 			for(Book eachBook:bookList) {
 				
-				writer.println(eachBook);
+				writer.println(eachBook.toString());
 				
 				result =true;
 			}
