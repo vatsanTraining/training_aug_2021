@@ -1,0 +1,3 @@
+101,Head first java,kathy sieera,450.0
+102,Spring in action,Ben johnson,950.0
+103,Effective Java,Thomas,1450.0
