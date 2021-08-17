@@ -40,7 +40,6 @@ public class Application {
 		System.out.println(dao.add(ram));
 		
 		
-		
 	}
 
 }

@@ -1,13 +1,14 @@
 package com.example.daos;
 
 import com.example.ifaces.*;
+import com.training.ifaces.CrudRepository;
 
 import java.util.List;
 
 import com.example.entity.*;
 import java.sql.*;
 
-public class StudentDaoImpl implements Repository<Student> {
+public class StudentDaoImpl implements CrudRepository<Student> {
 
 	
 	private Connection con;
@@ -24,7 +25,7 @@ public class StudentDaoImpl implements Repository<Student> {
 		String sql ="insert into student values(?,?,?)";
 		
 		
-		PreparedStatement pstmt;
+		PreparedStatement pstmt=null;
 		int rowAdded =0;
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -39,6 +40,13 @@ public class StudentDaoImpl implements Repository<Student> {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		
@@ -70,5 +78,37 @@ public class StudentDaoImpl implements Repository<Student> {
 		return null;
 	}
 
+	
+	@Override
+	public Student findById(int id) {
+
+		String sql = "select * from student where rollNumber=?";
+		
+		Student stud =null;
+		
+		PreparedStatement pstmt =null;
+		try {
+			
+			pstmt.setInt(1, id);
+			
+			pstmt = con.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+		  if(rs.next()) {
+			   
+			  int rollNumber = rs.getInt("rollNumber");
+			  String studentName = rs.getString("studentName");
+			  double markScored = rs.getDouble("markScored");
+			  
+			  stud =new Student(rollNumber, studentName, markScored);
+		  }
+		
+		} catch (Exception e) {
+             e.printStackTrace();
+		}
+		
+		return stud;
+	}
 	
 }
