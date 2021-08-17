@@ -25,26 +25,25 @@ public class StudentDaoImpl implements CrudRepository<Student> {
 		String sql ="insert into student values(?,?,?)";
 		
 		
-		if(findById(t.getRollNumber())==null) {
-		
-		
-		PreparedStatement pstmt=null;
-		
-		int rowAdded =0;
-		try {
-			pstmt = con.prepareStatement(sql);
-			
-			pstmt.setInt(1, t.getRollNumber());
-			pstmt.setString(2, t.getStudentName());
-			pstmt.setDouble(3,t.getMarkScored());
-			
-			System.out.println(pstmt.getClass());
-			
-			rowAdded = pstmt.executeUpdate();
+		if (findById(t.getRollNumber()) == null) {
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
+			PreparedStatement pstmt = null;
+
+			int rowAdded = 0;
+			try {
+				pstmt = con.prepareStatement(sql);
+
+				pstmt.setInt(1, t.getRollNumber());
+				pstmt.setString(2, t.getStudentName());
+				pstmt.setDouble(3, t.getMarkScored());
+
+				System.out.println(pstmt.getClass());
+
+				rowAdded = pstmt.executeUpdate();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
 			try {
 				pstmt.close();
 			} catch (SQLException e) {
@@ -52,7 +51,6 @@ public class StudentDaoImpl implements CrudRepository<Student> {
 				e.printStackTrace();
 			}
 		}
-		
 		
 		
 		return rowAdded==1?true:false;
