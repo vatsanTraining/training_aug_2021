@@ -1,0 +1,51 @@
+CREATE DATABASE college;
+
+CREATE TABLE Students
+(
+ROLL_NO int(3) PRIMARY KEY,
+NAME varchar(20),
+SUBJECT varchar(20),
+);
+
+DROP TABLE students;
+
+TRUNCATE TABLE  students;
+
+ ALTER TABLE students ADD (markscored  int(3));
+
+ALTER TABLE stduents DROP COLUMN mark_scored;
+
+ ALTER TABLE Student MODIFY name varchar(30);
+
+
+SELECT * FROM students;
+select name,subject from students 
+
+INSERT INTO stduents VALUES (101, "ramesh" ,"be");
+
+
+UPDATE students SET course = "b.tech" WHERE roll_number=101
+
+
+DELETE FROM students WHERE roll_Number>100
+
+
+CREATE TABLE customer (  
+  ID INT NOT NULL AUTO_INCREMENT,  
+  Name varchar(50) NOT NULL,  
+  City varchar(50) NOT NULL,  
+  PRIMARY KEY (ID)  
+);  
+
+CREATE TABLE contact (  
+  ID INT,  
+  Customer_Id INT,  
+  Customer_Info varchar(50) NOT NULL,  
+  Type varchar(50) NOT NULL,  
+  INDEX par_ind (Customer_Id),  
+  CONSTRAINT fk_customer FOREIGN KEY (Customer_Id)  
+  REFERENCES customer(ID)  
+  ON DELETE CASCADE  
+  ON UPDATE CASCADE  
+);  
+
