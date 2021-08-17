@@ -25,7 +25,11 @@ public class StudentDaoImpl implements CrudRepository<Student> {
 		String sql ="insert into student values(?,?,?)";
 		
 		
+		if(findById(t.getRollNumber())==null) {
+		
+		
 		PreparedStatement pstmt=null;
+		
 		int rowAdded =0;
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -52,6 +56,10 @@ public class StudentDaoImpl implements CrudRepository<Student> {
 		
 		
 		return rowAdded==1?true:false;
+		} else {
+			throw new ElementAlreadyExistException(Integer.toString(t.getRollNumber()));
+		}
+		
 	}
 
 	@Override
@@ -89,9 +97,11 @@ public class StudentDaoImpl implements CrudRepository<Student> {
 		PreparedStatement pstmt =null;
 		try {
 			
+				
+			pstmt = con.prepareStatement(sql);
+			
 			pstmt.setInt(1, id);
 			
-			pstmt = con.prepareStatement(sql);
 			
 			ResultSet rs = pstmt.executeQuery();
 			
