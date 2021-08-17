@@ -1,6 +1,10 @@
 package com.example;
 
+import java.sql.Connection;
+
+import com.example.daos.StudentDaoImpl;
 import com.example.entity.Student;
+import com.example.ifaces.Repository;
 import com.example.utils.DbConnection;
 
 public class Application {
@@ -27,7 +31,14 @@ public class Application {
 	public static void main(String[] args) {
 
 		
-		System.out.println(DbConnection.getMySqlConnection());
+		Student ram = new Student(101, "ramesh", 90);
+		
+		Connection con = DbConnection.getMySqlConnection();
+		
+		Repository<Student> dao =new StudentDaoImpl(con);
+		
+		System.out.println(dao.add(ram));
+		
 		
 		
 	}
