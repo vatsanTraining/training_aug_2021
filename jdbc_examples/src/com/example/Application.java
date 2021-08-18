@@ -37,8 +37,9 @@ public class Application {
 		
 		Repository<Student> dao =new StudentDaoImpl(con);
 		
-		System.out.println(dao.add(ram));
+	//	System.out.println(dao.add(ram));
 		
+		System.out.println(dao.findAll());
 		
 	}
 

@@ -25,30 +25,28 @@ public class UsingDateAndTransaction {
 			
 			con.setAutoCommit(false);
 						
-			String sqlTwo ="insert into student values(?,?,?)";
+			String sqlOne ="insert into student values(?,?,?)";
 			
 			
 			
-				PreparedStatement pstmt2 = null;
+				PreparedStatement pstmt1 = null;
 
-				int rowCount = 0;
-					pstmt2 = con.prepareStatement(sqlTwo);
+					pstmt1 = con.prepareStatement(sqlOne);
 
-					pstmt2.setInt(1, 507);
-					pstmt2.setString(2, "naveen");
-					pstmt2.setDouble(3, 87);
+					pstmt1.setInt(1, 508);
+					pstmt1.setString(2, "naveen");
+					pstmt1.setDouble(3, 87);
+
+					 sp1 =con.setSavepoint("sp1");
+					 
+					int rowCount1 = pstmt1.executeUpdate(); 
+					// insert row => savepoint=undo insert  below this row
 
 
-					rowCount = pstmt2.executeUpdate();  // insert row => undo insert row
-
-		
-					  sp1 =con.setSavepoint("sp1");  // savepoint
-
-					// next query
 					
-					String sqlOne = "insert into department values(?,?,?)";
+					String sqlTwo = "insert into department values(?,?,?)";
 					
-					PreparedStatement pstmtOne = con.prepareStatement(sqlOne);
+					PreparedStatement pstmtTwo = con.prepareStatement(sqlTwo);
 					
 					
 					 LocalDate date = LocalDate.of(2021, 8, 17);
@@ -57,28 +55,28 @@ public class UsingDateAndTransaction {
 				     Date sqlDate = Date.valueOf(date);
 				     
 					
-					pstmtOne.setInt(1,203);
-					pstmtOne.setString(2, "ECE");
-					pstmtOne.setDate(3,sqlDate );
+					pstmtTwo.setInt(1,203);
+					pstmtTwo.setString(2, "ECE");
+					pstmtTwo.setDate(3,sqlDate );
 					
 					
-					int rowAdded =pstmtOne.executeUpdate();
+					int rowAdded2 =pstmtTwo.executeUpdate();
 					
-					System.out.println("Row Added :="+ rowAdded);
+					System.out.println("Row Added :="+ rowAdded2);
 					
-					 sp2=con.setSavepoint("sp2");
 					
-					con.commit();
+					
+					 con.commit();
 					
 				
 			
 		} catch (Exception e) {
 			
-			try {
-				con.rollback(sp1);
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
+//			try {
+//				con.rollback(sp1);
+//			} catch (SQLException e1) {
+//				e1.printStackTrace();
+//			}
 			  
 			 e.printStackTrace();
 		}

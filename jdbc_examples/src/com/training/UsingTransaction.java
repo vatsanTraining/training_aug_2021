@@ -23,10 +23,11 @@ public class UsingTransaction {
 			
 			PreparedStatement pstmt1  = con.prepareStatement(sqlOne);
 
+			
 					pstmt1.executeUpdate();
 
+					Savepoint sp1 = con.setSavepoint("sp1");
 
-					Savepoint sp = con.setSavepoint("sp1");
 
 					
 					String sqlTwo ="insert into student values "+"(102 ,'ram',97)";
@@ -35,7 +36,9 @@ public class UsingTransaction {
 
 							pstmt1.executeUpdate();
 					
-							
+
+							Savepoint sp2 = con.setSavepoint("sp2");
+
 
 							String sqlThree ="insert into student values "+"(103 ,'vikcy',77)";
 							
@@ -45,7 +48,7 @@ public class UsingTransaction {
 									pstmt1.executeUpdate();
 
 									
-                                     con.rollback(sp);
+                                     con.rollback(sp1);
                                      
 									con.commit();
 	} catch(SQLException e) {
