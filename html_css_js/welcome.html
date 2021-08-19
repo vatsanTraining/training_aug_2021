@@ -5,6 +5,7 @@
 <title>Student Information</title>
 <link href="pictures/flag.jpg" type="images/jpg" rel="icon"/>
 <link href="styles/global.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <style type="text/css">
 
@@ -16,18 +17,38 @@ text-align: center;
 </head>
 <body>
 
-<h1 class="centerText" id="majHeading">National Institute of Technology</h1>
-<h4 class="centerText">Trichy</h4>
+<section class="container">
+<div class="row">
 
-
+	 <div class="col-md-4">
+		<img src="pictures/logo.png" alt="College Logo"/>
+	 </div>
+ 
+ <div class='col-md-8'>
+	<h1 class="centerText" id="majHeading">National Institute of Technology</h1>
+	<h4 class="centerText">Trichy</h4>
+	
+</div>
+</div>
+	
+	<div class="row">
+	
+	<div class="col-md-12">
 <ul>
 	<li><a href="showStudents.html">Student List</a></li>
 	<li><a href="addStudents.html">Add Student</a></li>
 	
 </ul>
+ </div>
+ </div>
+ 
+ 
 
 
-<img src="pictures/logo.png" alt="College Logo"/>
+
+
+
+</section>
 <script type="text/javascript" src="scripts/eventhandler.js"></script>
 
 </body>
