@@ -40,6 +40,7 @@ public class SpringQuickstartApplication {
 	public Customer shyam() {
 		
 		return new Customer(102,"Shyam","shy@abc.com");
+		
 	}
 	
 	@Bean
