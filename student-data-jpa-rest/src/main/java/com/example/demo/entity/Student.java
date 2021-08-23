@@ -8,17 +8,16 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name="student_test")
-
+@Table(name="student")
 @Data
 public class Student {
 
 	@Id
-	@Column(name = "rollNumber")
+	@Column(name = "rollnumber")
 	private int rollNumber;
-	@Column(name="studentName")
+	@Column(name="studentname")
 	private String studentName;
-	@Column(name="markScored")
+	@Column(name="markscored")
 	private double markScored;
 	
 }
