@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form  action="students" method="post" >
+<form:form  action="students" method="post" modelAttribute="commie">
 
 <label>Roll Number</label>
 <form:input path="rollNumber"/>

@@ -9,7 +9,7 @@
 <body>
 <h2>One Record Added with following details</h2>
 <p>
-${hh}
+${command}
 </p>
 </body>
 </html>

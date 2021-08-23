@@ -11,5 +11,7 @@
 <h1>${title}</h1>
 
 <a href="students">Add Student</a>
+<a href="students/all">View Student</a>
+
 </body>
 </html>

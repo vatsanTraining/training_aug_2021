@@ -1,47 +1,31 @@
 package com.example.demo.services;
 
-import java.util.*;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.entity.Student;
-import com.example.demo.repos.Repository;
 
-public class StudentRepoImpl implements Repository<Student> {
+@Service
+public class StudentService {
 
-	private List<Student> studList;
+	@Autowired
+	private RestTemplate template;
 	
-	public StudentRepoImpl() {
-		super();
-          studList = new ArrayList<>();
+	
+	private String URL = "http://localhost:8080/api/v1/students";
+	
+	public List<Student> findAll(){
+		
+		return this.template.exchange(URL, HttpMethod.GET,null,
+				 new ParameterizedTypeReference<List<Student>>() {}).getBody();
+		
+		
+		
 	}
-
-	@Override
-	public boolean add(Student t) {
-		return studList.add(t);
-	}
-
-	@Override
-	public List<Student> findAll() {
-		return studList;
-	}
-
-	@Override
-	public boolean remove(Student t) {
-
-		return studList.remove(t);
-	}
-
-	@Override
-	public List<Student> sortedList() {
-			
-			
-         return studList;
-	}
-
-	@Override
-	public List<Student> sortBy(String prop) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 }
