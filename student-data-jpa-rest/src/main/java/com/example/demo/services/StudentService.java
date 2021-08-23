@@ -27,4 +27,12 @@ public class StudentService {
 		
 		 return this.repo.save(entity);
 	}
+	
+	public List<Student> findByName(String name){
+		
+		return this.repo.findByStudentName(name);
+		
+	}
+	
+	
 }

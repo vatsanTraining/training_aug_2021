@@ -12,6 +12,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 	
 
 
-	@Query(value = "select * from student where studentName:studName",nativeQuery = true)
+	@Query(value = "select * from student where studentName=:studName",nativeQuery = true)
 	public List<Student> findByStudentName(@Param("studName") String srchName);
 }
