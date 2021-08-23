@@ -43,14 +43,25 @@ public class WelcomeController {
 		return mdl;
 	}
 	
+//	@RequestMapping(value = "/students",method = RequestMethod.POST)
+//	public String submitForm(@ModelAttribute("command") Student student) {
+//		
+//		  
+//		  
+//		return "success";
+//	}
+	
+
 	@RequestMapping(value = "/students",method = RequestMethod.POST)
-	public String submitForm(@ModelAttribute("command") Student student) {
+	public String submitForm(Student student,Model model) {
 		
+		  Student stud = this.service.add(student);
+		  
+		  model.addAttribute("entityAdded",stud);
 		  
 		return "success";
 	}
-	
-	
+
 	@RequestMapping(value = "/students/all",method = RequestMethod.GET)
 	public String getAllStudents(Model model) {
 		

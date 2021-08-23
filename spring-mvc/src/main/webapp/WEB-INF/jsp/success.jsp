@@ -9,7 +9,8 @@
 <body>
 <h2>One Record Added with following details</h2>
 <p>
-${command}
+${entityAdded}
 </p>
+<a href="http://localhost:4040">Home</a>
 </body>
 </html>

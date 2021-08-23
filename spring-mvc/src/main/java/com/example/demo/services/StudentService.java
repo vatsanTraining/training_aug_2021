@@ -28,4 +28,14 @@ public class StudentService {
 		
 	}
 	
+	public Student add(Student entity) {
+		
+		
+		return this.template.postForObject(URL, entity, Student.class);
+		
+		
+		
+		
+	}
+	
 }
